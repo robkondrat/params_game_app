@@ -31,4 +31,18 @@ class Api::ParamsGamesController < ApplicationController
     render 'guess_query.json.jb'
   end
 
+  def body_params_guess
+    @guess = params[:guess].to_i
+    hidden_number = 42
+
+    if @guess > hidden_number
+      @message = "Woah, too high. Go Lower!"
+    elsif @guess < hidden_number
+      @message = "Come up a bit, guess higher next time."
+    else
+      @message = "And that number was just right."
+    end
+
+    render "body_params_guess.json.jb"
+  end
 end
