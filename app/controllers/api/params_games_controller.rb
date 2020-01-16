@@ -45,4 +45,14 @@ class Api::ParamsGamesController < ApplicationController
 
     render "body_params_guess.json.jb"
   end
+
+  def username_action
+    @username = params[:name]
+    @password = params[:pass]
+    if @username == "hugh" && if @password == "swordfish"
+      message: 
+    
+
+    render "username_view.json.jb"
+  end
 end
